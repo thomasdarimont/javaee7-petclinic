@@ -2,6 +2,7 @@ package org.woehlke.javaee7.petclinic.web;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import java.util.logging.Logger;
 
 /**
  * Created by tom on 29.08.16.
@@ -10,7 +11,10 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class VcapBean {
 
+    private static final Logger LOGGER = Logger.getLogger(VcapBean.class.getName());
+
     public String getApplicationInfo(){
+        LOGGER.info("ApplicationInfo");
         return System.getenv("VCAP_APPLICATION");
     }
 
